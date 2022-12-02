@@ -4,3 +4,5 @@ class LoginResponseDto {
   final String firstName;
   final String lastName;
 }
+LoginResponseDto (LoginResponseDto
+)
