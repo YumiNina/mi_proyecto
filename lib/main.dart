@@ -20,19 +20,15 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: MultiBlocProvider(
-          providers: [
-            BlocProvider(create: (context) => AppCubit()),
-          ],
-          child: const MyHomePage(
-            title: '',
-          )),
+      home: MultiBlocProvider(providers: [
+        BlocProvider(create: (context) => AppCubit()),
+      ], child: const MyHomePage()),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key? key}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
