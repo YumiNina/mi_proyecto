@@ -1,1 +1,3 @@
-class LoginResponseDto {}
+class LoginResponseDto {
+  final String token;
+}
