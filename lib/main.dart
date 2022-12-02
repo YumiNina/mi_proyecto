@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'cubit/app_cubit.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,15 +17,17 @@ class MyApp extends StatelessWidget {
       title: 'The Best Food',
       theme: ThemeData(
         // This is the theme of your application.
-        
+
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    //  BlocProvider(create:(context => AppCubit()),
-     // BlocProvider(create:(context => AppCubit()),
-
-      )
-    
+      home: MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context) => AppCubit()),
+          ],
+          child: const MyHomePage(
+            title: '',
+          )),
+    );
   }
 }
 
