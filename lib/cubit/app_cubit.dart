@@ -6,6 +6,7 @@ import 'package:mi_proyecto/service/login_service.dart';
 
 class AppState {
   final bool isUserLoggedIn;
+    final bool isLoading;
   final LoginResponseDto? loginResponseDto;
 
   AppState({required this.isUserLoggedIn, this.loginResponseDto});
@@ -19,7 +20,8 @@ class AppCubit extends Cubit<AppState> {
     var loginresponseDto =await LoginService.login(username, password);
     emit(AppState(isUserLoggedIn: true, loginResponseDto: LoginResponseDto));
     
-  } else{
+  }; 
+  else{
     emit(AppState(isUserLoggedIn: false));
 
   }
