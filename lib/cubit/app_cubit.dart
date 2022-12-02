@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mi_proyecto/dto/login_service_dto.dart';
 import 'package:mi_proyecto/service/login_service.dart';
@@ -18,7 +16,7 @@ class AppState {
 class AppCubit extends Cubit<AppState> {
   AppCubit() : super(AppState(isUserLoggedIn: false, isLoading: true));
 
-  Void login(String username, String password) async {
+  void login(String username, String password) async {
     emit(AppState(isUserLoggedIn: false, isLoading: true));
     try {
       // ignore: non_constant_identifier_names
