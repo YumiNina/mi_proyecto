@@ -10,4 +10,9 @@ class LoginResponseDto {
     required this.firstName,
     required this.lastName,
   });
+factory LoginResponseDto.fromJson(Map<String, Dynamic>json){
+Return LoginResponseDto(
+  token: json['token'],
+)
+
 }
