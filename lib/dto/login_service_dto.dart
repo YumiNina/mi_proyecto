@@ -7,6 +7,7 @@ class LoginResponseDto {
 LoginResponseDto (
 {
 required this.token,
-
+required this.refreshToken,
+required this.firstName,
 
 }
