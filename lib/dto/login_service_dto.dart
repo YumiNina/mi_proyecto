@@ -4,5 +4,9 @@ class LoginResponseDto {
   final String firstName;
   final String lastName;
 }
-LoginResponseDto (LoginResponseDto
-)
+LoginResponseDto (
+{
+required this.token,
+
+
+}
