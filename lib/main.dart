@@ -62,8 +62,16 @@ class _MyHomePageState extends State<MyHomePage> {
           return Center(child: Column(mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(onPressed: (){
-              BlocProvider.of<AppCubit>(context).login("admin", "admin");}, child: Text("Login"))],
+              BlocProvider.of<AppCubit>(context).login("jperez", "123456");}, child: Text("Login"))],
           ),
           );
-        }
+          ),
+  }
+},
+}, 
+    );
+  }
+}
+          
+        
       
