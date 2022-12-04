@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: BlocBuilder<AppCubit, AppState>(
        builder: (BuildContext context, state){
         if (State.isLoading){
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         } else if (State.isUserLoggedIn){
           return Center
           (child: Column(mainAxisAlignment: MainAxisAlignment.center,
@@ -55,15 +55,10 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Text("Bienvenido ${state.loginResponseDto!.firstName}"),
             ElevatedButton(onPressed: (){
-              BlocProvider.of<AppCubit>(context).logout();
+              BlocProvider.of<AppCubit>(context).logout();}, child: Text("Logout"))],
+          ));
               );
             },
-          );
+          ;
         }
-       
-      },
-              
       
-    );
-  }
-}
