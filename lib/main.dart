@@ -54,7 +54,7 @@ return Center(
     mainAxisAlignment: MainAxisAlignment.center,
     Children: [Text(Bienvenido ${State.login} )],
   ),
-)
+) ;
 
 }
 
