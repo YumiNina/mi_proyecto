@@ -45,9 +45,9 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: BlocBuilder<AppCubit, AppState>(
        builder: (BuildContext context, state){
-        if (State.isLoading){
+        if (state.isLoading){
           return const Center(child: CircularProgressIndicator());
-        } else if (State.isUserLoggedIn){
+        } else if (state.isUserLoggedIn){
           return Center
           (child: Column(mainAxisAlignment: MainAxisAlignment.center,
           
