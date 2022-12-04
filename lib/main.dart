@@ -44,34 +44,40 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("The Best Food"),
       ),
       body: BlocBuilder<AppCubit, AppState>(
-       builder: (BuildContext context, state){
-        if (state.isLoading){
-          return const Center(child: CircularProgressIndicator());
-        } else if (state.isUserLoggedIn){
-          return Center
-          (child: Column(mainAxisAlignment: MainAxisAlignment.center,
-          
-          
-          children: [
-            Text("Bienvenido ${state.loginResponseDto!.firstName}"),
-            ElevatedButton(onPressed: (){
-              BlocProvider.of<AppCubit>(context).logout();}, child: Text("Logout"))],
-          ),
-          );
-        } else {
-          return Center(child: Column(mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(onPressed: (){
-              BlocProvider.of<AppCubit>(context).login("jperez", "123456");}, child: Text("Login"))],
-          ),
-          );
-          ),
-  }
-},
-}, 
+        builder: (BuildContext context, state) {
+          if (state.isLoading) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (state.isUserLoggedIn) {
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Bienvenido ${state.loginResponseDto!.firstName}"),
+                  ElevatedButton(
+                      onPressed: () {
+                        BlocProvider.of<AppCubit>(context).logout();
+                      },
+                      child: Text("Logout"))
+                ],
+              ),
+            );
+          } else {
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                      onPressed: () {
+                        BlocProvider.of<AppCubit>(context)
+                            .login("jperez", "123456");
+                      },
+                      child: Text("Login"))
+                ],
+              ),
+            );
+          }
+        },
+      ),
     );
   }
 }
-          
-        
-      
