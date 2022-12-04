@@ -56,9 +56,14 @@ class _MyHomePageState extends State<MyHomePage> {
             Text("Bienvenido ${state.loginResponseDto!.firstName}"),
             ElevatedButton(onPressed: (){
               BlocProvider.of<AppCubit>(context).logout();}, child: Text("Logout"))],
-          ));
-              );
-            },
-          ;
+          ),
+          );
+        } else {
+          return Center(child: Column(mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(onPressed: (){
+              BlocProvider.of<AppCubit>(context).login("admin", "admin");}, child: Text("Login"))],
+          ),
+          );
         }
       
